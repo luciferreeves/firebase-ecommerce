@@ -50,11 +50,39 @@
                 align-content: center;
                 align-items: center;
             }
+            #signout {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+            }
+            #cart {
+                position: absolute;
+                top: 25px;
+                right: 105px;
+            }
+            .singleProduct {
+                width: 250px;
+                border: solid 1px #333;
+                padding: 20px;
+                border-radius: 5px;
+                margin: 10px;
+                display: inline-block;
+            }
+            .productImage {
+                width: 210px;
+                height: 210px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
         </style>
 </head>
 <body>
     <div id="snackbar">Some text some message..</div>
+    <h2 class="title">Firebase ECommerce</h2>
+    <button id="cart">View Cart</button>
     <button id="signout">Signout</button>
+    <div id="loader"></div>
     <script src="../shared/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
     <script src="../shared/firebaseConfig.js"></script>
