@@ -43,15 +43,25 @@
             from {opacity: 1;}
             to {opacity: 0;}
         }
+        .middle {
+            margin: 0 auto;
+            width: 50%;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <div id="snackbar">Some text some message..</div>
-    <h1>ECommerce Login</h1>
-    Email: <input type="email" id="email" placeholder="email"><br><br>
-    Password: <input type="password" placeholder="password" id="password"><br><br>
-    <button id="login">Login</button><br><br>
-    <a href="signup">Not a user? Signup Now!</a>
+    <div class="middle">
+        <h1>ECommerce Login</h1>
+        Email: <input type="email" id="email" placeholder="email"><br><br>
+        Password: <input type="password" placeholder="password" id="password"><br><br>
+        <button id="login">Login</button><br><br>
+        <a href="signup">Not a user? Signup Now!</a>
+    </div>
     <script src="shared/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
     <script src="shared/firebaseConfig.js"></script>
