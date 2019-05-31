@@ -26,7 +26,7 @@ $(document).ready(function(){
     })
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-         window.location.replace('../dashboard')
+         window.location.replace('dashboard')
         }
     });
 })
