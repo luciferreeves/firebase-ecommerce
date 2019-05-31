@@ -47,10 +47,11 @@ $(document).ready(function(){
     }
     function loadAllProducts() {
         $.getJSON("../products.json", function(result){
+            console.log(result)
             var size = (Object.keys(result).length)
             for(i = 0; i < size ; i++)
             {
-                // $('#loader')
+                $('#loader').append('<div class="singleProduct"><div class="productImage" style="background-image: url(\''+result[i].ProductImageURL+'\');"></div><h3 class="productTitle">'+result[i].productName+'</h3><h5 class="productPrice">$'+result[i].productPrice+'</h5><a href="index.html?productid='+result[i].productId+'">View Product</a></div>')
             }
         });
     }
