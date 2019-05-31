@@ -40,7 +40,7 @@ $(document).ready(function(){
         loadAllProducts()
     }
     function loadProduct (productid) {
-        
+        console.log(productid)
     }
     function showErrorDiv() {
 
