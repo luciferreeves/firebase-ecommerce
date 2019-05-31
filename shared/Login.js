@@ -28,8 +28,5 @@ $(document).ready(function(){
         if (user) {
          window.location.replace('../dashboard')
         }
-        else {
-            showAlert("Failed to sign in. Try again.")
-        }
     });
 })
