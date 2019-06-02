@@ -40,7 +40,9 @@ $(document).ready(function(){
         loadAllProducts()
     }
     function loadProduct (productid) {
-        console.log(productid)
+        $.getJSON("../products.json", function(result){
+            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image: url('+')"></div><div class="content"><h1>Title</h1><ul><li>Point 1</li><li>Point 2</li><li>Point 3</li><li>Point 4</li></ul><h3>$17.99</h3><button>Add to Cart</button></div></div>')
+        })
     }
     function showErrorDiv() {
 
