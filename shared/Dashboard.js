@@ -62,4 +62,8 @@ $(document).ready(function(){
             }
         });
     }
+
+    $('#cart').click(function(){
+        window.location.replace('cart');
+    })
 })
