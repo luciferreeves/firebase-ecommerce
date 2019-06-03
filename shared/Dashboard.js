@@ -50,7 +50,7 @@ $(document).ready(function(){
         })
     }
     function showErrorDiv() {
-
+        $('#loader').append('<h1>This product does not exist.</h1><p>Click <a href="../dashboard">here</a> to go home</p>');
     }
     function loadAllProducts() {
         $.getJSON("../products.json", function(result){
