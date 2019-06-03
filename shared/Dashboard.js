@@ -46,7 +46,7 @@ $(document).ready(function(){
             for(i=0; i< Object.keys(result[productid].productDescription).length; i++) {
                 str += ('<li>' + result[productid].productDescription[i] + '</li>');
             }
-            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$17.99</h3><button>Add to Cart</button></div></div>');
+            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button>Add to Cart</button></div></div>');
         })
     }
     function showErrorDiv() {
