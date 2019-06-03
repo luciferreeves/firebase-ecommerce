@@ -41,7 +41,12 @@ $(document).ready(function(){
     }
     function loadProduct (productid) {
         $.getJSON("../products.json", function(result){
-            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image: url('+')"></div><div class="content"><h1>Title</h1><ul><li>Point 1</li><li>Point 2</li><li>Point 3</li><li>Point 4</li></ul><h3>$17.99</h3><button>Add to Cart</button></div></div>')
+            console.log(result[productid])
+            str = "";
+            for(i=0; i< Object.keys(result[productid].productDescription).length; i++) {
+                str += ('<li>' + result[productid].productDescription[i] + '</li>');
+            }
+            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$17.99</h3><button>Add to Cart</button></div></div>');
         })
     }
     function showErrorDiv() {
