@@ -40,6 +40,7 @@ $(document).ready(function(){
         loadAllProducts()
     }
     function loadProduct (productid) {
+        $('#loader').empty();
         $.getJSON("../products.json", function(result){
             // console.log(result[productid])
             str = "";
@@ -47,32 +48,35 @@ $(document).ready(function(){
                 str += ('<li>' + result[productid].productDescription[i] + '</li>');
             }
             firebase.auth().onAuthStateChanged(function(user) {
-                var cartRef = firebase.database().ref('userCart/' + user.uid);
+                var cartRef = firebase.database().ref('userCart/' + user.uid + '/' + productid);
                 cartRef.on('value', function(snapshot) {
                     // console.log(snapshot.val())
                     if(snapshot.val() != null) {
-                        var values = (Object.values(snapshot.val())[productid])
-                        if(values != undefined) {
-                            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" disabled id="'+productid+'">Already in Cart</button></div></div>');
-                        } else {
-                            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" id="'+productid+'">Add to Cart</button></div></div>');
-                        }
+                        $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" disabled id="'+productid+'">Already in Cart</button></div></div>');
                     } else {
                         $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" id="'+productid+'">Add to Cart</button></div></div>');
                     }
                     $('.clickAdd').click(function(){
+                        // console.log(productid)
+                        var cartRef = firebase.database().ref('userCart/' + user.uid + '/' +  productid);
                         cartRef.set({
-                            [productid] : result[productid]
+                            name : result[productid].productName,
+                            price : result[productid].productPrice
                         })
+                        $('#loader').empty();
+                        $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" disabled id="'+productid+'">Already in Cart</button></div></div>');
+                        showAlert("Product added in cart. You can view your cart and check out now.")
                     })
                 });
             });
         })
     }
     function showErrorDiv() {
+        $('#loader').empty();
         $('#loader').append('<h1>This product does not exist.</h1><p>Click <a href="../dashboard">here</a> to go home</p>');
     }
     function loadAllProducts() {
+        $('#loader').empty();
         $.getJSON("../products.json", function(result){
             // console.log(result)
             var size = (Object.keys(result).length)
