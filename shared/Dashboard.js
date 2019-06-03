@@ -41,12 +41,32 @@ $(document).ready(function(){
     }
     function loadProduct (productid) {
         $.getJSON("../products.json", function(result){
-            console.log(result[productid])
+            // console.log(result[productid])
             str = "";
             for(i=0; i< Object.keys(result[productid].productDescription).length; i++) {
                 str += ('<li>' + result[productid].productDescription[i] + '</li>');
             }
-            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button>Add to Cart</button></div></div>');
+            firebase.auth().onAuthStateChanged(function(user) {
+                var cartRef = firebase.database().ref('userCart/' + user.uid);
+                cartRef.on('value', function(snapshot) {
+                    // console.log(snapshot.val())
+                    if(snapshot.val() != null) {
+                        var values = (Object.values(snapshot.val())[productid])
+                        if(values != undefined) {
+                            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" disabled id="'+productid+'">Already in Cart</button></div></div>');
+                        } else {
+                            $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" id="'+productid+'">Add to Cart</button></div></div>');
+                        }
+                    } else {
+                        $('#loader').append('<div class="productDetail"><div class="picture" style="background-image:url(\''+result[productid].ProductImageURL+'\');"></div><div class="content"><h1>'+result[productid].productName+'</h1><ul>'+str+'</ul><h3>$'+result[productid].productPrice+'</h3><button class="clickAdd" id="'+productid+'">Add to Cart</button></div></div>');
+                    }
+                    $('.clickAdd').click(function(){
+                        cartRef.set({
+                            [productid] : result[productid]
+                        })
+                    })
+                });
+            });
         })
     }
     function showErrorDiv() {
@@ -54,7 +74,7 @@ $(document).ready(function(){
     }
     function loadAllProducts() {
         $.getJSON("../products.json", function(result){
-            console.log(result)
+            // console.log(result)
             var size = (Object.keys(result).length)
             for(i = 0; i < size ; i++)
             {
