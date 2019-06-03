@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('#cart').click(function(){
         window.location.replace('../')
     })
+    
     function showAlert(message) {
         // Get the snackbar DIV
         var x = document.getElementById("snackbar");
@@ -12,6 +13,7 @@ $(document).ready(function(){
         // After 3 seconds, remove the show class from DIV
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
+
     $('#signout').click(function(){
         firebase.auth().signOut().then(function() {
             window.location.replace('../')
@@ -20,34 +22,47 @@ $(document).ready(function(){
         });
     })
 
-    var user;
-
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
          window.location.replace('../')
         }
-        user = firebase.auth().currentUser;
 
-        console.log(user)
+        loadCart(user);
 
-        //Checking if Cart is Empty 
-    
+    });
+
+    function loadCart(user) {
+        var user = user
         var cartRef = firebase.database().ref('userCart/' + user.uid);
         cartRef.on('value', function(snapshot) {
             if(snapshot.val() === null) {
                 showEmptyCart();
             }
-        });
+            else {
+                var totalPrice = 0;
+                $('#loader').empty();
+                $("#loader").append('<tr><th>Item</th><th>Price</th><th>Options</th></tr>')
+                for(i = 0; i < Object.keys(snapshot.val()).length; i++) {
+                    // console.log(Object.values(snapshot.val())[i]);
+                    totalPrice += parseFloat(Object.values(snapshot.val())[i].price);
+                    $("#loader").append('<tr><td>'+Object.values(snapshot.val())[i].name+'</td><td>$'+Object.values(snapshot.val())[i].price+'</td><td><button class="delClick" id="'+Object.keys(snapshot.val())[i]+'">Delete</button></td></tr>')
+                }
+                $("#loader").append('<tr><th>Total Price</th><th colspan = "2">$'+totalPrice+'</th></tr>')
+            }
+            $('.delClick').on('click', function(event){
+                event.preventDefault();
+                var id = ($(this).attr('id'))
+                var cartRef = firebase.database().ref('userCart/' + user.uid + '/' + id)
+                cartRef.remove();
+                loadCart(user);
+                showAlert("Product Deleted")
+            })
+        })
+    }
 
-        function showEmptyCart() {
-            $('#loader').html('<h1>Your Cart is Empty</h1><p>Click <a href="../">here</a> to shop for some products.</p>');
-            showAlert('Your cart is empty. Go add something.')
-        }
+    function showEmptyCart() {
+        $('#loader').html('<h1>Your Cart is Empty</h1><p>Click <a href="../">here</a> to shop for some products.</p>');
+        showAlert('Your cart is empty. Go add something.')
+    }
         
-    });
-
-    
-    
-
-
 })
