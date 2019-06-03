@@ -38,6 +38,11 @@ $(document).ready(function(){
                 showEmptyCart();
             }
         });
+
+        function showEmptyCart() {
+            $('#loader').html('<h1>Your Cart is Empty</h1><p>Click <a href="../">here</a> to shop for some products.</p>');
+            showAlert('Your cart is empty. Go add something.')
+        }
         
     });
 
