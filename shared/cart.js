@@ -19,9 +19,30 @@ $(document).ready(function(){
             showAlert("Failed to sign out")
         });
     })
+
+    var user;
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
          window.location.replace('../')
         }
+        user = firebase.auth().currentUser;
+
+        console.log(user)
+
+        //Checking if Cart is Empty 
+    
+        var cartRef = firebase.database().ref('userCart/' + user.uid);
+        cartRef.on('value', function(snapshot) {
+            if(snapshot.val() === null) {
+                showEmptyCart();
+            }
+        });
+        
     });
+
+    
+    
+
+
 })
