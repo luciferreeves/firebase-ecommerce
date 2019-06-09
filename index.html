@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Firebase ECommerce Solution</title>
-    <link rel="stylesheet" href="shared/css/homepage.css">
-</head>
-<body>
-    <div id="snackbar">Some text some message..</div>
-    <div class="middle">
-        <h1>ECommerce Login</h1>
-        Email: <input type="email" id="email" placeholder="email"><br><br>
-        Password: <input type="password" placeholder="password" id="password"><br><br>
-        <button id="login">Login</button><br><br>
-        <a href="signup">Not a user? Signup Now!</a>
-    </div>
-    <script src="shared/jquery.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
-    <script src="shared/firebaseConfig.js"></script>
-    <script src="shared/Login.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>Firebase ECommerce Solution</title>
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <link href="shared/css/homepage.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- <div id="snackbar">Some text some message..</div>
+                    <div class="middle">
+                        <h1>ECommerce Login</h1>
+                        Email: <input type="email" id="email" placeholder="email"><br><br>
+                        Password: <input type="password" placeholder="password" id="password"><br><br>
+                        <button id="login">Login</button><br><br>
+                        <a href="signup">Not a user? Signup Now!</a>
+                    </div> -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Firebase ECommerce</a>
+            <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarText" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <form class="mx-2 my-auto d-inline w-100">
+                    <div class="input-group">
+                        <input class="form-control" id="searchbox" placeholder="Search for Products" type="text">
+                    </div>
+                </form>
+                <span class="navbar-text">
+                    <a id="sign" class="nav-link" style="display: block; width: 100%; padding: .25rem 1.5rem;     text-align: inherit;
+                    white-space: nowrap;" href="#">Sign In/ Register</a>
+                    <div class="nav-item dropdown">
+                        <a style="display: none;" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+                            My Account
+                        </a>
+                        <div style="left: -40px;" aria-labelledby="navbarDropdown" class="dropdown-menu">
+                            <!-- <h6 style="font-size: 1em; font-weight: 700; padding: .25rem 1.5rem; display: block; width: 100%; -webkit-user-select: none;">Account Management</h6> -->
+                            <a style="color:black;" class="dropdown-item item-black" href="#">My Account</a>
+                            <a style="color:black;" class="dropdown-item item-black" href="#">My Products</a>
+                            <a style="color:black;" class="dropdown-item item-black" href="#">My Orders</a>
+                            <div class="dropdown-divider"></div>
+                            <a style="color:black;" class="dropdown-item item-black" href="#">SignOut</a>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>This site is broken for now. Going under complete rewrite with bootstrap, adding new features.</h1>
+        </div>
+        <script src="shared/jquery.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
+        <script src="shared/firebaseConfig.js"></script>
+        <script src="shared/Login.js"></script>
+    </body>
 </html>

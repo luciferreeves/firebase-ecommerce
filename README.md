@@ -1,5 +1,7 @@
 # Firebase Ecommerce
 
+<h3 style="color:red">This site is broken for now. Going under complete rewrite with bootstrap, adding new features.</h3>
+
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://GitHub.com/luciferreeves/)
 
 [![Website luciferreeves.github.io](https://img.shields.io/website-up-down-green-red/https/luciferreeves.github.io/firebase-ecommerce.svg?style=flat-square)](https://luciferreeves.github.io/firebase-ecommerce/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://lbesson.mit-license.org/) [![Last Commit](https://img.shields.io/github/last-commit/luciferreeves/firebase-ecommerce.svg?style=flat-square)](https://luciferreeves.github.io/firebase-ecommerce/)   [![Twitter Follow](https://img.shields.io/twitter/follow/lucifercreeves.svg?label=Follow%20Me%20on%20Twitter)](https://www.twitter.com/LuciferCReeves) 
