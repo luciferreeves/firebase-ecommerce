@@ -9,14 +9,6 @@
         <link href="shared/css/homepage.css" rel="stylesheet">
     </head>
     <body>
-        <!-- <div id="snackbar">Some text some message..</div>
-                    <div class="middle">
-                        <h1>ECommerce Login</h1>
-                        Email: <input type="email" id="email" placeholder="email"><br><br>
-                        Password: <input type="password" placeholder="password" id="password"><br><br>
-                        <button id="login">Login</button><br><br>
-                        <a href="signup">Not a user? Signup Now!</a>
-                    </div> -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Firebase ECommerce</a>
             <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarText" data-toggle="collapse" type="button">
@@ -29,26 +21,67 @@
                     </div>
                 </form>
                 <span class="navbar-text">
-                    <a id="sign" class="nav-link" style="display: block; width: 100%; padding: .25rem 1.5rem;     text-align: inherit;
-                    white-space: nowrap;" href="#">Sign In/ Register</a>
+                    <a class="nav-link" href="#" id="sign" style="display: block; width: 100%; padding: .25rem 1.5rem;     text-align: inherit;
+                                            white-space: nowrap;">Sign In/ Register</a>
                     <div class="nav-item dropdown">
-                        <a style="display: none;" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button" style="display: none;">
                             My Account
                         </a>
-                        <div style="left: -40px;" aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <div
+                            aria-labelledby="navbarDropdown" class="dropdown-menu" style="left: -40px;">
                             <!-- <h6 style="font-size: 1em; font-weight: 700; padding: .25rem 1.5rem; display: block; width: 100%; -webkit-user-select: none;">Account Management</h6> -->
-                            <a style="color:black;" class="dropdown-item item-black" href="#">My Account</a>
-                            <a style="color:black;" class="dropdown-item item-black" href="#">My Products</a>
-                            <a style="color:black;" class="dropdown-item item-black" href="#">My Orders</a>
+                            <a class="dropdown-item item-black" href="#" style="color:black;">My Account</a>
+                            <a class="dropdown-item item-black" href="#" style="color:black;">My Products</a>
+                            <a class="dropdown-item item-black" href="#" style="color:black;">My Orders</a>
                             <div class="dropdown-divider"></div>
-                            <a style="color:black;" class="dropdown-item item-black" href="#">SignOut</a>
+                            <a class="dropdown-item item-black" href="#" style="color:black;">SignOut</a>
                         </div>
                     </div>
                 </span>
             </div>
         </nav>
-        <div class="container">
-            <h1>This site is broken for now. Going under complete rewrite with bootstrap, adding new features.</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sidebar">
+                    <div class="padded">
+                        <h6 class="padded-bar">Mobiles and Computers</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="#">Mobile Phones</a></li>
+                            <li class="list-group-item"><a href="#">Mobile Accessories</a></li>
+                            <li class="list-group-item"><a href="#">Cases and Covers</a></li>
+                            <li class="list-group-item"><a href="#">Screen Protectors</a></li>
+                            <li class="list-group-item"><a href="#">Power Banks</a></li>
+                            <li class="list-group-item"><a href="#">Smart Watches</a></li>
+                            <li class="list-group-item"><a href="#">Tablets</a></li>
+                            <li class="list-group-item"><a href="#">Laptops</a></li>
+                            <li class="list-group-item"><a href="#">Desktops</a></li>
+                            <li class="list-group-item"><a href="#">Drives and Storage</a></li>
+                            <li class="list-group-item"><a href="#">Monitors</a></li>
+                            <li class="list-group-item"><a href="#">Printers</a></li>
+                            <li class="list-group-item"><a href="#">Software</a></li>
+                        </ul>
+                        <h6 class="padded-bar">TV, Appliances, Electronics</h6>
+                        <li class="list-group-item"><a href="#">Televisions</a></li>
+                        <li class="list-group-item"><a href="#">Headphones</a></li>
+                        <li class="list-group-item"><a href="#">Cameras</a></li>
+                        <li class="list-group-item"><a href="#">Speakers</a></li>
+                        <li class="list-group-item"><a href="#">Refrigerators</a></li>
+                        <li class="list-group-item"><a href="#">Air Conditioners</a></li>
+                        <li class="list-group-item"><a href="#">Washing Machines</a></li>
+                        <li class="list-group-item"><a href="#">Kitchen/Home Appliances</a></li>
+                        <li class="list-group-item"><a href="#">Heating/Cooling Appliances</a></li>
+                        <li class="list-group-item"><a href="#">Gaming Consoles</a></li>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-10 col-xl-10 main">
+                    <div class="container-fluid sale-box">
+                        <img src="https://m.media-amazon.com/images/G/31/img19/AMS/banners1/Home-Products._CB454409463_.jpg" alt="Home Appliances Sale">
+                    </div>
+                    <div class="recents">
+                        <h6>Newly Added Products</h6>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="shared/jquery.js"></script>
         <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

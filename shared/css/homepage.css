@@ -1,45 +1,68 @@
-#snackbar {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: rgb(231, 81, 81);
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
+.padded {
+    padding: 0px 0px 30px 0px;
+}
+.padded-bar {
+    padding: 10px 0px 5px 10px;
+}
+.sidebar {
+    height: 100%;
     position: fixed;
     z-index: 1;
-    top: 30px;
-    right:30px;
+    left: 0;
+    overflow-y: scroll;
+    width: 240px;
 }
-#snackbar.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+.main {
+    margin-left: 245px;
+    padding-top: 10px;
 }
-@-webkit-keyframes fadein {
-    from {opacity: 0;} 
-    to { opacity: 1;}
+.list-group-item > a {
+    color: black;
+    font-size: 0.8em;
 }
-
-@keyframes fadein {
-    from { opacity: 0;}
-    to { opacity: 1;}
+.list-group-item {
+    padding: .35rem 1.25rem;
 }
 
-@-webkit-keyframes fadeout {
-    from {opacity: 1;} 
-    to {opacity: 0;}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-
-@keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
-.middle {
-    margin: 0 auto;
-    width: 50%;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
+::-webkit-scrollbar-thumb {
+  background: #555555;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #262626;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #262626;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.sale-box {
+    text-align: center;
+}
+.sale-box > img {
+    width: 100%;
+}
+.recents {
+    padding: 1.5rem;
 }
