@@ -6,9 +6,22 @@
         <meta content="ie=edge" http-equiv="X-UA-Compatible">
         <title>Firebase ECommerce Solution</title>
         <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-        <link href="shared/css/main.css" rel="stylesheet">
+        <link href="../shared/css/main.css" rel="stylesheet">
     </head>
     <body>
+        <div style="position: absolute; top: 75px; z-index: 99; right: 10px;">
+            <div class="toast" data-autohide="false">
+                <div class="toast-header">
+                    <strong id="message" class="mr-auto">Message</strong>
+                    <button aria-label="Close" class="ml-2 mb-1 close" data-dismiss="toast" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="body" class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Firebase ECommerce</a>
             <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarText" data-toggle="collapse" type="button">
@@ -22,7 +35,7 @@
                 </form>
                 <span class="navbar-text">
                     <a class="nav-link" href="#" id="sign" style="display: block; width: 100%; padding: .25rem 1.5rem;     text-align: inherit;
-                                            white-space: nowrap;">Sign In/ Register</a>
+                                                                                                                                                                    white-space: nowrap;">Sign In/ Register</a>
                     <div class="nav-item dropdown">
                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button" style="display: none;">
                             My Account
@@ -40,54 +53,30 @@
                 </span>
             </div>
         </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="sidebar">
-                    <div class="padded">
-                        <h6 class="padded-bar">Mobiles and Computers</h6>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="#">Mobile Phones</a></li>
-                            <li class="list-group-item"><a href="#">Mobile Accessories</a></li>
-                            <li class="list-group-item"><a href="#">Cases and Covers</a></li>
-                            <li class="list-group-item"><a href="#">Screen Protectors</a></li>
-                            <li class="list-group-item"><a href="#">Power Banks</a></li>
-                            <li class="list-group-item"><a href="#">Smart Watches</a></li>
-                            <li class="list-group-item"><a href="#">Tablets</a></li>
-                            <li class="list-group-item"><a href="#">Laptops</a></li>
-                            <li class="list-group-item"><a href="#">Desktops</a></li>
-                            <li class="list-group-item"><a href="#">Drives and Storage</a></li>
-                            <li class="list-group-item"><a href="#">Monitors</a></li>
-                            <li class="list-group-item"><a href="#">Printers</a></li>
-                            <li class="list-group-item"><a href="#">Software</a></li>
-                        </ul>
-                        <h6 class="padded-bar">TV, Appliances, Electronics</h6>
-                        <li class="list-group-item"><a href="#">Televisions</a></li>
-                        <li class="list-group-item"><a href="#">Headphones</a></li>
-                        <li class="list-group-item"><a href="#">Cameras</a></li>
-                        <li class="list-group-item"><a href="#">Speakers</a></li>
-                        <li class="list-group-item"><a href="#">Refrigerators</a></li>
-                        <li class="list-group-item"><a href="#">Air Conditioners</a></li>
-                        <li class="list-group-item"><a href="#">Washing Machines</a></li>
-                        <li class="list-group-item"><a href="#">Kitchen/Home Appliances</a></li>
-                        <li class="list-group-item"><a href="#">Heating/Cooling Appliances</a></li>
-                        <li class="list-group-item"><a href="#">Gaming Consoles</a></li>
-                    </div>
+        <div class="container-fluid padded-top">
+            <div class="card">
+                <div class="card-header">
+                    Login to Firebase ECommerce
                 </div>
-                <div class="col-md-10 col-lg-10 col-xl-10 main">
-                    <div class="container-fluid sale-box">
-                        <img src="https://m.media-amazon.com/images/G/31/img19/AMS/banners1/Home-Products._CB454409463_.jpg" alt="Home Appliances Sale">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="email" placeholder="Enter email" type="email">
+                        <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>
                     </div>
-                    <div class="recents">
-                        <h6>Newly Added Products</h6>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="password" placeholder="Password" type="password">
                     </div>
+                    <button class="btn btn-primary" id="login">Login</button>
                 </div>
             </div>
         </div>
-        <script src="shared/jquery.js"></script>
+        <script src="../shared/js/jquery.js"></script>
         <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
-        <script src="shared/firebaseConfig.js"></script>
-        <script src="shared/LoginCheck.js"></script>
+        <script src="../shared/js/firebaseConfig.js"></script>
+        <script src="../shared/js/Login.js"></script>
     </body>
 </html>

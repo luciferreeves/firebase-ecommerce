@@ -1,6 +1,9 @@
 .padded {
     padding: 0px 0px 30px 0px;
 }
+.padded-top{
+  padding: 50px;
+}
 .padded-bar {
     padding: 10px 0px 5px 10px;
 }
