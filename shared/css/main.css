@@ -69,3 +69,9 @@
 .recents {
     padding: 1.5rem;
 }
+#sign {
+  display: block;
+}
+#signed {
+  display: none;
+}
