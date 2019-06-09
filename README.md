@@ -1,6 +1,7 @@
 # Firebase Ecommerce
-
-<h3 style="color:red">This site is broken for now. Going under complete rewrite with bootstrap, adding new features.</h3>
+```diff
+ - <h3 style="color:red">This site is broken for now. Going under complete rewrite with bootstrap, adding new features.</h3>
+````
 
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://GitHub.com/luciferreeves/) [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://GitHub.com/luciferreeves/)
 
